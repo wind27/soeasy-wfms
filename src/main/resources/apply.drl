@@ -1,0 +1,30 @@
+package rules
+
+import com.souyidai.wfms.rules.apply.loantype.LoanTypeRule
+
+import com.souyidai.wfms.rules.apply.comecity.ComeCityIdRule
+
+import com.souyidai.wfms.rules.apply.ApplyRuleExpression
+
+import com.souyidai.wfms.rules.Rule
+
+//import com.souyidai.wfms.model.ComparisonOperator
+
+dialect  "mvel"
+
+
+//产品类型
+rule "loanType"
+    when
+        applyRule: ApplyRuleExpression(applyRule.match(LoanTypeRule.class))
+    then
+        applyRule.go();
+end
+
+//进件城市
+rule "comeCityId"
+    when
+        applyRule: ApplyRuleExpression(applyRule.match(ComeCityIdRule.class))
+    then
+        applyRule.go();
+end
