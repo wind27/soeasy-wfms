@@ -10,6 +10,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -19,6 +21,14 @@ import java.util.concurrent.TimeUnit;
  * @date 2019/11/26
  **/
 public class SeleniumQueryService {
+
+    private Map<String, Object> getText() {
+        Map<String, Object> data = new HashMap<>();
+
+
+        return data;
+    }
+
     public static void main(String[] args) {
         DesiredCapabilities aDesiredcap = DesiredCapabilities.chrome();
         aDesiredcap.setPlatform(Platform.LINUX);
@@ -30,8 +40,8 @@ public class SeleniumQueryService {
             URL url = new URL(remoteUrl);
             driver = new RemoteWebDriver(url, capabilities);
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            driver.get("http://www.baidu.com");
-            System.out.println(driver.findElement(By.id("head")).getText());
+            driver.get("https://book.qidian.com/info/107580#Catalog");
+            System.out.println(driver.findElement(By.className("catalog-content-wrap")).getText());
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
