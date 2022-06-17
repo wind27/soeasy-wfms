@@ -45,7 +45,7 @@
 
 		<docker.repostory>qianchun27</docker.repostory>
 
-		<drools-version>7.7.0.Final</drools-version>
+		<drools-version>7.60.0.Final</drools-version>
 		<druid-version>1.0.18</druid-version>
 		<fastjson-version>1.2.60</fastjson-version>
 		<junit-version>4.12</junit-version>
